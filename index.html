@@ -22,10 +22,10 @@
 
 
 
-/*
+
   
 //<! — The core Firebase JS SDK is always required and must be listed first →
-<script src="https://www.gstatic.com/firebasejs/8.2.0/firebase-app.js"></script>
+/* <script src="https://www.gstatic.com/firebasejs/8.2.0/firebase-app.js"></script>
 <script src="https://www.gstatic.com/firebasejs/8.2.0/firebase-auth.js"></script>
 <script src="https://www.gstatic.com/firebasejs/8.2.0/firebase-database.js"></script>
   
@@ -123,14 +123,14 @@ ref.on("value", function(snapshot) {
     
     ref.on("value", function(snapshot) {
  snapshot.forEach(function(element) {
-   document.querySelector('#root').innerHTML =`
+   document.querySelector('#root').innerHTML +=`
    <div>${element.val()}<\div>
    `
 
 
 
  });
-})
+});
 
 
 
