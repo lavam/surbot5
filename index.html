@@ -172,13 +172,22 @@ ref.on("value", function(snapshot) {
 
           
 
-            
+    function ledOn(){
+      firebase.database().ref("LED").set({
+       status:"ON", status2:"ON"
+        })
+      }
+    function ledOff(){
+      firebase.database().ref("LED").set({
+       status:"OFF"
+        })
+     }     
 
           
 
                
     
-    
+    /*
     function ledOn(){
       firebase.database().ref("LED").set({
        status:"ON"
@@ -189,7 +198,7 @@ ref.on("value", function(snapshot) {
        status:"OFF"
         })
      }
-    
+    */
     
     
     </script>
