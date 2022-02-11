@@ -34,7 +34,7 @@
 
 
 
-
+   <div id="root"<\div>
 
   
   
@@ -106,7 +106,7 @@
         })
      */
        
-
+/*
 var ref = firebase.database().ref("LED");
 
 ref.on("value", function(snapshot) {
@@ -114,6 +114,21 @@ ref.on("value", function(snapshot) {
   var childData = childSnapshot.val();
   var id=childData.id;
   console.log(childData);
+ });
+});
+    */
+    
+    
+    var ref = firebase.database().ref("LED");
+    
+    ref.on("value", function(snapshot) {
+ snapshot.forEach(function(element) {
+   document.querySelector('#root').innerHTML +=`
+   <div>${element.val()}<\div>
+   `
+
+
+
  });
 });
 
