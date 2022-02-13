@@ -127,7 +127,7 @@ ref.on("value", function(snapshot) {
     ref.on("value", function(snapshot) {
     snapshot.forEach(function(element) {
    // console.log(snapshot.val());
-    var data1 = element.val();
+   // var data1 = element.val();
     document.querySelector('#root').innerHTML +=`
     <div>${element.val()}<\div>
    `
@@ -179,14 +179,14 @@ ref.on("value", function(snapshot) {
      
     function ledOn(){
       document.querySelector('#root').innerHTML = "";
-      document.querySelector('#root').innerHTML += data1;
+     // document.querySelector('#root').innerHTML += data1;
       firebase.database().ref("LED").set({
        status:"ON"
         })
       }
     function ledOff(){
       document.querySelector('#root').innerHTML = "";
-      document.querySelector('#root').innerHTML += data1;
+     // document.querySelector('#root').innerHTML += data1;
       firebase.database().ref("LED").set({
        status:"OFF"
         })
