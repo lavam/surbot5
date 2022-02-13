@@ -126,7 +126,7 @@ ref.on("value", function(snapshot) {
     
     ref.on("value", function(snapshot) {
     snapshot.forEach(function(element) {
-    var data1 = element.val();
+    var data1 = snapshot.val();
     document.querySelector('#root').innerHTML +=`
     <div>${element.val()}<\div>
    `
