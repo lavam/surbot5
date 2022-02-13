@@ -118,13 +118,13 @@ ref.on("value", function(snapshot) {
 });
     */
     
-    document.querySelector("root").innerHTML = "";
+  //  document.querySelector("root").innerHTML = "";
     var ref = firebase.database().ref("LED");
     
     ref.on("value", function(snapshot) {
- snapshot.forEach(function(element) {
-   document.querySelector('#root').innerHTML +=`
-   <div>${element.val()}<\div>
+    snapshot.forEach(function(element) {
+    document.querySelector('#root').innerHTML +=`
+    <div>${element.val()}<\div>
    `
 
 
@@ -171,18 +171,20 @@ ref.on("value", function(snapshot) {
            
 
           
-
+     
     function ledOn(){
+      document.querySelector("root").innerHTML = "";
       firebase.database().ref("LED").set({
-       status:"ON", status2:"ON2"
+       status:"ON"
         })
       }
     function ledOff(){
+      document.querySelector("root").innerHTML = "";
       firebase.database().ref("LED").set({
        status:"OFF"
         })
      }     
-
+     
           
 
                
@@ -198,7 +200,7 @@ ref.on("value", function(snapshot) {
        status:"OFF"
         })
      }
-    */
+     */
     
     
     </script>
