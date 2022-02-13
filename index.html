@@ -16,7 +16,9 @@
 <body>
   
 
-
+<h1> LED TURN ON / OFF APP </h1>
+<button onclick="ledOn()">ON</button>
+<button onclick="ledOff()">OFF</button>
 
 
    
@@ -180,7 +182,7 @@ ref.on("value", function(snapshot) {
         })
       }
     function ledOff(){
-      document.querySelector("root").innerHTML = "";
+      document.querySelector('#root').innerHTML = "";
       firebase.database().ref("LED").set({
        status:"OFF"
         })
@@ -206,9 +208,10 @@ ref.on("value", function(snapshot) {
     
     </script>
   
-  
+  /*
 <h1> LED TURN ON / OFF APP </h1>
 <button onclick="ledOn()">ON</button>
 <button onclick="ledOff()">OFF</button>
+  */
 </body>
 </html>
