@@ -182,14 +182,14 @@ ref.on("value", function(snapshot) {
      // document.querySelector('#root').innerHTML += data1;
       firebase.database().ref("LED").set({
        status:"ON"
-        })
+        });
       }
     function ledOff(){
       document.querySelector('#root').innerHTML = "";
      // document.querySelector('#root').innerHTML += data1;
       firebase.database().ref("LED").set({
        status:"OFF"
-        })
+        });
      }     
      
           
@@ -200,12 +200,12 @@ ref.on("value", function(snapshot) {
     function ledOn(){
       firebase.database().ref("LED").set({
        status:"ON"
-        })
+        });
       }
     function ledOff(){
       firebase.database().ref("LED").set({
        status:"OFF"
-        })
+        });
      }
      */
     
