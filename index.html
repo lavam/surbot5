@@ -95,19 +95,19 @@
 
 
 
-     //  FirebaseDatabase.getInstance().getReference().child("ABC").child("def").setValue("123");
+ 
 
-    /*
-     firebase.database().ref("LED").set({
-       status:"ON"
-        })
-    */
     
-    /*
-     firebase.database().ref("LED").set({
-       status:"OFF"
-        })
-     */
+ 
+       
+      
+   
+    
+   
+
+      
+       
+    
        
 /*
 var ref = firebase.database().ref("LED");
@@ -118,7 +118,7 @@ ref.on("value", function(snapshot) {
   var id=childData.id;
   console.log(childData);
  });
-});
+})
     */
     
   //  document.querySelector("root").innerHTML = "";
@@ -135,7 +135,7 @@ ref.on("value", function(snapshot) {
 
 
  });
-});
+})
 
 
 
@@ -182,14 +182,14 @@ ref.on("value", function(snapshot) {
      // document.querySelector('#root').innerHTML += data1;
       firebase.database().ref("LED").set({
        status:"ON"
-        });
+        })
       }
     function ledOff(){
       document.querySelector('#root').innerHTML = "";
      // document.querySelector('#root').innerHTML += data1;
       firebase.database().ref("LED").set({
        status:"OFF"
-        });
+        })
      }     
      
           
@@ -200,12 +200,12 @@ ref.on("value", function(snapshot) {
     function ledOn(){
       firebase.database().ref("LED").set({
        status:"ON"
-        });
+        })
       }
     function ledOff(){
       firebase.database().ref("LED").set({
        status:"OFF"
-        });
+        })
      }
      */
     
