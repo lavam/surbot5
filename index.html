@@ -122,9 +122,9 @@ ref.on("value", function(snapshot) {
     */
     
   //  document.querySelector("root").innerHTML = "";
-    var ref = firebase.database().ref("LED");
+    var ledRef = firebase.database().ref("LED");
     
-    ref.on("value", function(snapshot) {
+    ledRef.on("value", function(snapshot) {
     snapshot.forEach(function(element) {
    // console.log(snapshot.val());
    // var data1 = element.val();
