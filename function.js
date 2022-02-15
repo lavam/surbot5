@@ -1,7 +1,7 @@
-function alertFcn() {
+function alertFn() {
 alert ('Alert !');
 }
 
-function promptFcn() {
-prompt ("This is a prompt box", "Hello world");
+function promptFn() {
+prompt ("Prompt box", "Welcome");
 }
