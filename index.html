@@ -7,16 +7,10 @@
 <title>Document</title>
 </head>
   
-
-
-
-
-  
-  
 <body>
   
 
-<h1> LED TURN ON / OFF APP </h1>
+<h1> Realtime status monitoring </h1>
 <button onclick="ledOn()">ON</button>
 <button onclick="ledOff()">OFF</button>
 <br><br>
@@ -33,14 +27,6 @@
 <script src="https://www.gstatic.com/firebasejs/8.2.0/firebase-database.js"></script>
   
   
-
-
-
-
-   <div id="root"<\div>
-
-  
-  
  <script src=
 
 "https://www.gstatic.com/firebasejs/3.7.4/firebase.js">
@@ -48,8 +34,7 @@
     </script>
 
 
-
-   
+ <div id="root"<\div>
   
   <script>
   // Import the functions you need from the SDKs you need
@@ -68,158 +53,89 @@
 //  appId: "1:953862455276:web:c46679ad5921e4eafc4ac9"
 //};
     
-   // const firebaseConfig = {
-  //apiKey: "AIzaSyCmNVaTr8sTKQVSqZprpBK-AMTpUsNPUGs",
-  //authDomain: "surbot-v1-1.firebaseapp.com",
- // databaseURL: "https://surbot-v1-1-default-rtdb.firebaseio.com",
-  //projectId: "surbot-v1-1",
-  //storageBucket: "surbot-v1-1.appspot.com",
-  //messagingSenderId: "702504911981",
-  //appId: "1:702504911981:web:6d1fea970a851c7ff3ab64"
-//};
+   
     
-    const firebaseConfig = {
-  apiKey: "AIzaSyCmNVaTr8sTKQVSqZprpBK-AMTpUsNPUGs",
-  authDomain: "surbot-v1-1.firebaseapp.com",
-  databaseURL: "https://surbot-v1-1-default-rtdb.firebaseio.com",
-  projectId: "surbot-v1-1",
-  storageBucket: "surbot-v1-1.appspot.com",
-  messagingSenderId: "702504911981",
-  appId: "1:702504911981:web:6d1fea970a851c7ff3ab64"
-};
-
-    
-
+     const firebaseConfig = {
+    apiKey: "AIzaSyCmNVaTr8sTKQVSqZprpBK-AMTpUsNPUGs",
+    authDomain: "surbot-v1-1.firebaseapp.com",
+    databaseURL: "https://surbot-v1-1-default-rtdb.firebaseio.com",
+    projectId: "surbot-v1-1",
+    storageBucket: "surbot-v1-1.appspot.com",
+    messagingSenderId: "702504911981",
+    appId: "1:702504911981:web:6d1fea970a851c7ff3ab64"
+    };
 
     firebase.initializeApp(firebaseConfig);
 
 
-
-
-
-
-
- 
-
+       function ledOn(){
+          firebase.database().ref("LED").set({
+           status: "ON",
+           date: Date()
+           });
+          takeSnapshot();
+          }
     
- 
-       
-      
-   
+       function ledOff(){
+          firebase.database().ref("LED").set({
+           status: "OFF",
+           date: Date() 
+           });
+          takeSnapshot();
+          }
     
-   
+        function status(){
+           takeSnapshot();
+            }
+    
+           takeSnapshot();
 
-      
-       
-    
-       
-/*
-var ledRef = firebase.database().ref("LED");
-
-ldRef.on("value", function(snapshot) {
- snapshot.forEach(function(childSnapshot) {
-  var childData = childSnapshot.val();
-  var id=childData.id;
-  console.log(childData);
- });
-})
-    */
-    
-  //  document.querySelector("root").innerHTML = "";
+        function takeSnapshot() {
+              var ledRef = firebase.database().ref("LED");
+              ledRef.on("value", function(snapshot) {
+              // var led = snapshot.val();
+              var ledStatus = snapshot.child("status").val();
+              var ledDate = snapshot.child("date").val();
+              document.getElementById("root").innerHTML = "";
+              // document.getElementById("root").innerHTML += '<br>' + led ;
+              document.getElementById("root").innerHTML += "Date: " + ledDate ;
+              document.getElementById("root").innerHTML += '<br>' + "Status: " + ledStatus ;
+               });
+              }  
+         
+             
+           
+                   
+     
+     /*
     var ledRef = firebase.database().ref("LED");
     
     ledRef.on("value", function(snapshot) {
     snapshot.forEach(function(element) {
-   // console.log(snapshot.val());
-   // var data1 = element.val();
+
     document.querySelector('#root').innerHTML +=`
     <div>${element.val()}<\div>
-   `
+     '
+     });
+    })
+     */     
 
-
-
- });
-})
-
-
-
-
-    
-
-
-
-    
-
-
-           
-
-        
- 
-
-
-
-
-
-
-
-
- 
-
-
-
-
-
-          
-
-          
-
-               
-
-              
-
-           
-
-          
-     /*
+      
+    /*
     function ledOn(){
-      document.querySelector('#root').innerHTML = "";
-     // document.querySelector('#root').innerHTML += data1;
       firebase.database().ref("LED").set({
        status:"ON"
         });
-      }
+       }
     function ledOff(){
-      document.querySelector('#root').innerHTML = "";
-     // document.querySelector('#root').innerHTML += data1;
       firebase.database().ref("LED").set({
        status:"OFF"
         });
-     }     
+       }
      */
-          
-
-               
-    
-    
-    function ledOn(){
-      firebase.database().ref("LED").set({
-       status:"ON"
-        });
-      }
-    function ledOff(){
-      firebase.database().ref("LED").set({
-       status:"OFF"
-        });
-     }
-     
     
     
     </script>
   
-  
-
-
-
- 
 </body>
 </html>
