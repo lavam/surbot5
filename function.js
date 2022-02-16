@@ -6,9 +6,9 @@ function promptFn() {
 prompt ("Prompt box", "Welcome");
 }
 
-function sysdateTime() {
-var today = new Date();
-var date =  today.getDate() + "." + (today.getMonth()+1) + "." + today.getFullYear()+;
-var time= today.getHours() + ":" + today.getMinutes() + ":" + today.getSeconds();
-var dateTime = date +", "+ time;
+function getSysDateTime() {
+var systoday = new Date();
+var sysdate =  today.getDate() + "." + (today.getMonth()+1) + "." + today.getFullYear()+;
+var systime= today.getHours() + ":" + today.getMinutes() + ":" + today.getSeconds();
+var sysDateTime = sysdate +", "+ systime;
 }
