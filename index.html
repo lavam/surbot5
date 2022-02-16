@@ -65,18 +65,18 @@
     firebase.initializeApp(firebaseConfig);
 
 
-       function ledOn(){ // getDateTime();
+       function ledOn(){  getDateTime();
           firebase.database().ref("LED").set({
            status: "ON",
-           date: Date() 
+           date: dateTime 
            });
           takeSnapshot();
           }
     
-       function ledOff(){ // getDateTime();
+       function ledOff(){  getDateTime();
           firebase.database().ref("LED").set({
            status: "OFF",
-           date: Date() 
+           date: dateTime
            });
           takeSnapshot();
           }
@@ -104,16 +104,46 @@
                });
               }  
     
-           //   var dateTime;
-     //   function getDateTime() {  
+              var dateTime;
+       function getDateTime() {  
               var today = new Date();
               var date =  today.getDate() + "." + (today.getMonth()+1) + "." + today.getFullYear();
               var time= today.getHours() + ":" + today.getMinutes() + ":" + today.getSeconds();
-            var  dateTime = date +":"+ time;
+                  dateTime = date +" "+ time;
               document.getElementById("root2").innerHTML += '<br>' + dateTime ;
-            //   }  
+              }  
+    
+       function getCurrentDateTime() { 
+              var currentDate = new Date()
+              var currentDay   = currentDate.getDate() < 10 
+                                 ? '0' + currentDate.getDate() 
+                                 : currentDate.getDate();
+              var currentMonth = currentDate.getMonth() < 9 
+                                 ? '0' + (currentDate.getMonth() + 1) 
+                                 : (currentDate.getMonth() + 1);
+              var currentYear   = currentDate.getFullYear() < 10 
+                                 ? '0' + currentDate.geFullYear() 
+                                 : currentDate.getFyllYear();
+              var currentHours   = currentDate.getHours() < 10 
+                                 ? '0' + currentDate.geHours() 
+                                 : currentDate.getHours();
+              var currentMinuts   = currentDate.getMinuts() < 10 
+                                 ? '0' + currentDate.getMinuts() 
+                                 : currentDate.getMinuts();
+              var currentSeconds = currentDate.getSeconds() < 10 
+                                 ? '0' + currentDate.getSeconds() 
+                                 : currentDate.getSeconds();
+              var currentDateTime = currentDay
+                                    +"."+ currentMonth
+                                    +"."+ currentYera
+                                    +" "+ currentHours
+                                    +":"+ currentMinuts
+                                    +":"+ currentSeconds ;
+                                   }
      
-     /*
+   
+    
+    /*
     var ledRef = firebase.database().ref("LED");
     
     ledRef.on("value", function(snapshot) {
