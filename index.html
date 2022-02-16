@@ -65,18 +65,18 @@
     firebase.initializeApp(firebaseConfig);
 
 
-       function ledOn(){  getDateTime();
+       function ledOn(){  getCurrentDateTime();
           firebase.database().ref("LED").set({
            status: "ON",
-           date: dateTime 
+           date: currentDateTime 
            });
           takeSnapshot();
           }
     
-       function ledOff(){  getDateTime();
+       function ledOff(){  getCurrentDateTime();
           firebase.database().ref("LED").set({
            status: "OFF",
-           date: dateTime
+           date: currentDateTime
            });
           takeSnapshot();
           }
@@ -100,20 +100,21 @@
               document.getElementById("root").innerHTML = "";
               // document.getElementById("root").innerHTML += '<br>' + led ;
               document.getElementById("root").innerHTML += '<br>' + "Status: " + ledStatus ;
-              document.getElementById("root").innerHTML += " " + "Date: " + ledDate ;
+              document.getElementById("root").innerHTML +=  " "   + "Date: " + ledDate ;
                });
               }  
     
-             // var dateTime;
+              var dateTime ;
        function getDateTime() {  
               var today = new Date();
               var date =  today.getDate() + "." + (today.getMonth()+1) + "." + today.getFullYear();
               var time= today.getHours() + ":" + today.getMinutes() + ":" + today.getSeconds();
-              var dateTime = date +" "+ time;
+                  dateTime = date +" "+ time;
               document.getElementById("root2").innerHTML += "";
               document.getElementById("root2").innerHTML += '<br>' + dateTime ;
               }  
     
+              var currentDateTime ;
        function getCurrentDateTime() { 
               var currentDate = new Date()
               var currentDay   = currentDate.getDate() < 10 
@@ -134,7 +135,7 @@
               var currentSeconds = currentDate.getSeconds() < 10 
                                  ? '0' + currentDate.getSeconds() 
                                  : currentDate.getSeconds();
-              var currentDateTime = currentDay
+                 currentDateTime = currentDay
                                     +"."+ currentMonth
                                     +"."+ currentYera
                                     +" "+ currentHours
