@@ -65,18 +65,18 @@
     firebase.initializeApp(firebaseConfig);
 
 
-       function ledOn(){  getCurrentDateTime();
+       function ledOn(){  getdateTime();
           firebase.database().ref("LED").set({
            status: "ON",
-           date: currentDateTime 
+           date: dateTime 
            });
           takeSnapshot();
           }
     
-       function ledOff(){  getCurrentDateTime();
+       function ledOff(){  getdateTime();
           firebase.database().ref("LED").set({
            status: "OFF",
-           date: currentDateTime
+           date: dateTime
            });
           takeSnapshot();
           }
@@ -100,7 +100,7 @@
               document.getElementById("root").innerHTML = "";
               // document.getElementById("root").innerHTML += '<br>' + led ;
               document.getElementById("root").innerHTML += '<br>' + "Status: " + ledStatus ;
-              document.getElementById("root").innerHTML +=  "  "  + "Date: " + ledDate ;
+              document.getElementById("root").innerHTML +=  "  "  + "date: " + ledDate ;
                });
               }  
     
