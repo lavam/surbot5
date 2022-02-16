@@ -65,18 +65,18 @@
     firebase.initializeApp(firebaseConfig);
 
 
-       function ledOn(){  getDateTime();
+       function ledOn(){  getCurrentDateTime();
           firebase.database().ref("LED").set({
            status: "ON",
-           date: dateTime 
+           date: currentDateTime 
            });
           takeSnapshot();
           }
     
-       function ledOff(){  getDateTime();
+       function ledOff(){  getCurrentDateTime();
           firebase.database().ref("LED").set({
            status: "OFF",
-           date: dateTime
+           date: currentDateTime
            });
           takeSnapshot();
           }
