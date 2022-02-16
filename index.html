@@ -78,7 +78,7 @@
            status: "OFF",
            date: dateTime
            });
-          takeSnapshot();
+          takeSnapshot(); getCurrentDateTime();
           }
     
        function status(){
@@ -86,10 +86,10 @@
             }
     
        function status(){
-           takeSnapshot();
+           takeSnapshot(); getCurrentDateTime();
             }
     
-           takeSnapshot();
+       takeSnapshot(); getCurrentDateTime();
 
        function takeSnapshot() {
               var ledRef = firebase.database().ref("LED");
@@ -141,7 +141,9 @@
                                     +" "+ currentHours
                                     +":"+ currentMinuts
                                     +":"+ currentSeconds ;
-                                   }
+                  document.getElementById("root2").innerHTML = "";    
+                  document.getElementById("root2").innerHTML += '<br>' + "date: " + currentdateDate ;    
+                  }
      
    
     
