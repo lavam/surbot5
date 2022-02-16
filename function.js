@@ -6,7 +6,7 @@ function promptFn() {
 prompt ("Prompt box", "Welcome");
 }
 
-function dateTime() {
+function sysdateTime() {
 var today = new Date();
 var date =  today.getDate() + "." + (today.getMonth()+1) + "." + today.getFullYear()+;
 var time= today.getHours() + ":" + today.getMinutes() + ":" + today.getSeconds();
