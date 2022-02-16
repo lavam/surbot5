@@ -117,23 +117,23 @@
               var currentDateTime ;
        function getCurrentDateTime() { 
               var currentDate = new Date();
-              var currentDay   = currentDate.getDate() < 10 
-                                 ? '0' + currentDate.getDate() 
-                                 : currentDate.getDate();
+              var currentDay   = currentDate.getDay() < 10 
+                                 ? "0" + currentDate.getDay() 
+                                 : currentDate.getDay();
               var currentMonth = currentDate.getMonth() < 9 
-                                 ? '0' + (currentDate.getMonth() + 1) 
+                                 ? "0" + (currentDate.getMonth() + 1) 
                                  : (currentDate.getMonth() + 1);
               var currentYear   = currentDate.getFullYear() < 10 
-                                 ? '0' + currentDate.geFullYear() 
+                                 ? "0" + currentDate.geFullYear() 
                                  : currentDate.getFyllYear();
               var currentHours   = currentDate.getHours() < 10 
-                                 ? '0' + currentDate.geHours() 
+                                 ? "0" + currentDate.geHours() 
                                  : currentDate.getHours();
               var currentMinuts   = currentDate.getMinuts() < 10 
-                                 ? '0' + currentDate.getMinuts() 
+                                 ? "0" + currentDate.getMinuts() 
                                  : currentDate.getMinuts();
               var currentSeconds = currentDate.getSeconds() < 10 
-                                 ? '0' + currentDate.getSeconds() 
+                                 ? "0" + currentDate.getSeconds() 
                                  : currentDate.getSeconds();
                  currentDateTime = currentDay
                                     +"."+ currentMonth
