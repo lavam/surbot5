@@ -104,12 +104,12 @@
                });
               }  
     
-              var dateTime;
+             // var dateTime;
        function getDateTime() {  
               var today = new Date();
               var date =  today.getDate() + "." + (today.getMonth()+1) + "." + today.getFullYear();
               var time= today.getHours() + ":" + today.getMinutes() + ":" + today.getSeconds();
-                  dateTime = date +" "+ time;
+              var dateTime = date +" "+ time;
               document.getElementById("root2").innerHTML += '<br>' + dateTime ;
               }  
     
