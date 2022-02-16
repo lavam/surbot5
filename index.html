@@ -99,8 +99,8 @@
               var ledDate = snapshot.child("date").val();
               document.getElementById("root").innerHTML = "";
               // document.getElementById("root").innerHTML += '<br>' + led ;
-              document.getElementById("root").innerHTML += '<br>' + "Date: " + ledDate ;
               document.getElementById("root").innerHTML += '<br>' + "Status: " + ledStatus ;
+              document.getElementById("root").innerHTML += " " + "Date: " + ledDate ;
                });
               }  
     
@@ -110,6 +110,7 @@
               var date =  today.getDate() + "." + (today.getMonth()+1) + "." + today.getFullYear();
               var time= today.getHours() + ":" + today.getMinutes() + ":" + today.getSeconds();
               var dateTime = date +" "+ time;
+              document.getElementById("root2").innerHTML += "";
               document.getElementById("root2").innerHTML += '<br>' + dateTime ;
               }  
     
