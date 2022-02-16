@@ -64,18 +64,18 @@
     firebase.initializeApp(firebaseConfig);
 
 
-       function ledOn(){
+       function ledOn(){ getSysDate();
           firebase.database().ref("LED").set({
            status: "ON",
-           date: Date()
+           date: dateTime
            });
           takeSnapshot();
           }
     
-       function ledOff(){
+       function ledOff(){ getSysDate();
           firebase.database().ref("LED").set({
            status: "OFF",
-           date: Date() 
+           date: dateTime 
            });
           takeSnapshot();
           }
@@ -103,9 +103,12 @@
                });
               }  
          
-             
-           
-                   
+        function getSysDate() {  
+              var today = new Date();
+              var date =  today.getDate() + "." + (today.getMonth()+1) + "." + today.getFullYear()+;
+              var time= today.getHours() + ":" + today.getMinutes() + ":" + today.getSeconds();
+              var dateTime = date +' '+ time;
+               }  
      
      /*
     var ledRef = firebase.database().ref("LED");
