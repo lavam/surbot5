@@ -146,7 +146,7 @@ div
             } */
     
        
-       takeSnapshot();  getCurrentDateTime();
+       takeSnapshot();  getCurrentDateTime(24hr);
        document.getElementById("root2").innerHTML = "Date: " + currentDateTime ;
 
        function takeSnapshot() {
@@ -161,7 +161,7 @@ div
               document.getElementById("root").innerHTML += "  " + "date: " + ledDate ;
                });
               }  
-              alert('4');
+              alert('5');
     
            
    /*    function getDateTime() {  
@@ -175,8 +175,9 @@ div
        
 
                 
-            
-       function getCurrentDateTime() { 
+                  var date, time;
+       function getCurrentDateTime(format) { 
+                     if(format==24hr) {
                      var  today = new Date();
                      var day   = today.getDate() < 10 ? "0" + today.getDate() : today.getDate() ; 
                      var month = today.getMonth() < 9 ? "0" + (today.getMonth() + 1) : (today.getMonth() + 1) ;              
@@ -184,11 +185,13 @@ div
                      var hours   = today.getHours() < 10 ? "0" + today.getHours() : today.getHours() ;
                      var minutes   = today.getMinutes() < 10 ? "0" + today.getMinutes() : today.getMinutes() ;     
                      var seconds   = today.getSeconds() < 10 ? "0" + today.getSeconds() : today.getSeconds() ;    
-                     var currentDate = day +"."+ month +"."+ year ;
-                     var currentTime = hours +":"+ minutes +":"+ seconds ;
+                      date = day +"."+ month +"."+ year ;
+                      time = hours +":"+ minutes +":"+ seconds ;
                      currentDateTime = currentDate +" "+ currentTime ;
                      document.getElementById("root2").innerHTML = "";    
-                     document.getElementById("root2").innerHTML += "Date: " + currentDate +" "+ currentTime ;    
+                     document.getElementById("root2").innerHTML += "Date: " + date +" "+ time ;    
+                       }
+         
                      }         
                                  
                    
