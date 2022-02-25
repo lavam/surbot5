@@ -63,6 +63,8 @@
     };
 
     firebase.initializeApp(firebaseConfig);
+    
+       var dateTime, currentDateTime;
 
 
        function ledOn(){  getDateTime();
@@ -70,7 +72,7 @@
            status: "ON",
            date: dateTime 
            });
-          takeSnapshot(); // getDateTime();
+          takeSnapshot(); 
           }
     
        function ledOff(){  getDateTime();
@@ -78,18 +80,21 @@
            status: "OFF",
            date: dateTime
            });
-          takeSnapshot(); // getDateTime();
+          takeSnapshot(); 
           }
+    
+      function status(){
+           takeSnapshot();  getDateTime();
+           document.getElementById("root2").innerHTML = '<br>' + "Date: " + dateTime ;
+            }
     
      /*  function status(){
            takeSnapshot(); getCurrentDateTime();
             } */
     
-       function status(){
-           takeSnapshot(); // getDateTime();
-            }
-    
+       
        takeSnapshot();  getDateTime();
+       document.getElementById("root2").innerHTML = '<br>' + "Date: " + dateTime ;
 
        function takeSnapshot() {
               var ledRef = firebase.database().ref("LED");
