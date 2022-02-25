@@ -70,7 +70,7 @@
            status: "ON",
            date: dateTime 
            });
-          takeSnapshot(); getDateTime();
+          takeSnapshot(); getCurrentDateTime();
           }
     
        function ledOff(){  getDateTime();
@@ -78,18 +78,18 @@
            status: "OFF",
            date: dateTime
            });
-          takeSnapshot(); getDateTime();
+          takeSnapshot(); getCurrentDateTime();
           }
     
-       function status(){
+     /*  function status(){
            takeSnapshot(); getDateTime();
-            }
+            } */
     
        function status(){
-           takeSnapshot(); getDateTime();
+           takeSnapshot(); getCurrentDateTime();
             }
     
-       takeSnapshot(); getDateTime();
+       takeSnapshot(); getCurrentDateTime();
 
        function takeSnapshot() {
               var ledRef = firebase.database().ref("LED");
@@ -117,13 +117,13 @@
               var currentDateTime ;
        function getCurrentDateTime() { 
               var currentDate = new Date();
-              var currentDay   = currentDate.getDay() < 10 
-                                 ? "0" + currentDate.getDay() 
-                                 : currentDate.getDay();
+              var currentDay   = currentDate.getDate() < 10 
+                                 ? "0" + currentDate.getDate() 
+                                 : currentDate.getDate();
               var currentMonth = currentDate.getMonth() < 9 
                                  ? "0" + (currentDate.getMonth() + 1) 
                                  : (currentDate.getMonth() + 1);
-              var currentYear   = currentDate.getFullYear() < 10 
+              var currentFullYear   = currentDate.getFullYear() < 10 
                                  ? "0" + currentDate.geFullYear() 
                                  : currentDate.getFyllYear();
               var currentHours   = currentDate.getHours() < 10 
@@ -137,12 +137,12 @@
                                  : currentDate.getSeconds();
                  currentDateTime = currentDay
                                     +"."+ currentMonth
-                                    +"."+ currentYear
+                                    +"."+ currentFullYear
                                     +" "+ currentHours
                                     +":"+ currentMinuts
                                     +":"+ currentSeconds ;
                   document.getElementById("root2").innerHTML = "";    
-                  document.getElementById("root2").innerHTML += '<br>' + "date: " + currentdateDate ;    
+                  document.getElementById("root2").innerHTML += '<br>' + "date: " + currentDateTime ;    
                   }
      
    
