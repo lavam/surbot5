@@ -117,8 +117,8 @@ div
     firebase.initializeApp(firebaseConfig);
     
        var dateTime;
-       var currentDateTime;
-
+      
+       var date, time, ampm=true, sec=true;
 
        function ledOn(){  getDateTime();
           firebase.database().ref("LED").set({
@@ -175,7 +175,7 @@ div
        
 
                 
-                  var date, time, ampm=true, sec=true;
+                  
        function getCurrentDateTime() { 
                      
                      var  today = new Date();
