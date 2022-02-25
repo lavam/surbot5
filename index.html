@@ -147,7 +147,7 @@ div
     
        
        takeSnapshot();  getCurrentDateTime(ampm);
-       document.getElementById("root2").innerHTML = "Date: " + currentDateTime ;
+       document.getElementById("root2").innerHTML = "Date: " + dateTime ;
 
        function takeSnapshot() {
               var ledRef = firebase.database().ref("LED");
@@ -175,7 +175,7 @@ div
        
 
                 
-                  var date, time, ampm=true, sec=false;
+                  var date, time, ampm=true, ampmsec=false;
        function getCurrentDateTime() { 
                      
                      var  today = new Date();
