@@ -185,13 +185,13 @@ div
                      var hours   = today.getHours() < 10 ? "0" + today.getHours() : today.getHours() ;
                      var minutes   = today.getMinutes() < 10 ? "0" + today.getMinutes() : today.getMinutes() ;     
                      var seconds   = today.getSeconds() < 10 ? "0" + today.getSeconds() : today.getSeconds() ;  
-                      if(f=='ampmsec') {
+                      if(f==ampmsec) {
                      var format = hours < 12 ? 'AM' : 'PM';
                      hours = hours % 12; 
                      hours = hours ? hours : 12;
                       date = day +"."+ month +"."+ year ;
                       time = hours +":"+ minutes +":"+ seconds + format ;
-                       } else if(f=='ampm') {   
+                       } else if(f==ampm) {   
                             date = day +"."+ month +"."+ year ;
                             time = hours +":"+ minutes +" "+ format ;
                              } else {
