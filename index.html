@@ -16,14 +16,14 @@
 <button onclick="status()">Status</button>
 <button onclick="alertFn()">Alert</button>
 <button onclick="promptFn()">Prompt</button> <br><br>
-
+<!--
 <input type="text" placeholder="Message" id="messageField">
 <button onclick="sendMessage()">Send</button> <br><br>
 
 <input type="file" /> 
 <input type="submit" name="Upload" value="Upload" /> 
 <br>
-  
+ -->
 
 
 <script type="text/javascript" src="script.js"></script>
@@ -84,7 +84,7 @@
           }
     
       function status(){
-           takeSnapshot();  getDateTime();
+           takeSnapshot(); getDateTime();
            document.getElementById("root2").innerHTML = '<br>' + "Date: " + dateTime ;
             }
     
@@ -110,7 +110,7 @@
               }  
               alert('1');
     
-           /*   var dateTime ;
+           
        function getDateTime() {  
               var today = new Date();
               var date =  today.getDate() + "." + (today.getMonth()+1) + "." + today.getFullYear();
@@ -118,7 +118,7 @@
                   dateTime = date +" "+ time;
               document.getElementById("root2").innerHTML = "";
               document.getElementById("root2").innerHTML += '<br>' + "Date: " + dateTime ;
-              }  */
+              }  
     
            /*   var currentDateTime ;
        function getCurrentDateTime() { 
