@@ -122,24 +122,24 @@ div
       
        var date, time, ampm=true, sec=true;
 
-       function ledOn(){  getDateTime();
+       function ledOn(){  getCurrentDateTime();
           firebase.database().ref("LED").set({
            status: "ON",
            date: dateTime 
            });
-          takeSnapshot(); 
+          takeSnapshot();  getCurrentDateTime();
           }
     
-       function ledOff(){  getDateTime();
+       function ledOff(){  getCurrentDateTime();
           firebase.database().ref("LED").set({
            status: "OFF",
            date: dateTime
            });
-          takeSnapshot(); 
+          takeSnapshot();  getCurrentDateTime();
           }
     
       function status(){
-           takeSnapshot(); getDateTime();
+           takeSnapshot(); getCurrentDateTime();
            document.getElementById("root2").innerHTML = "Date: " + dateTime ;
             }
     
