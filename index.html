@@ -145,7 +145,7 @@ div
             } */
     
        
-       takeSnapshot();  getDateTime();
+       takeSnapshot();  getCurrentDateTime();
        document.getElementById("root2").innerHTML = "Date: " + dateTime ;
 
        function takeSnapshot() {
@@ -160,7 +160,7 @@ div
               document.getElementById("root").innerHTML += "  " + "date: " + ledDate ;
                });
               }  
-              alert('8');
+              alert('1');
     
            
    /*    function getDateTime() {  
@@ -172,7 +172,7 @@ div
               document.getElementById("root2").innerHTML += "Date: " + dateTime ;
               }  */
     
-           /*   var currentDateTime ;
+            
        function getCurrentDateTime() { 
               var currentDate = new Date();
               var currentDay   = currentDate.getDate() < 10 
@@ -200,8 +200,8 @@ div
                                     +":"+ currentMinuts
                                     +":"+ currentSeconds ;
                   document.getElementById("root2").innerHTML = "";    
-                  document.getElementById("root2").innerHTML += '<br>' + "date: " + currentDateTime ;    
-                  } */
+                  document.getElementById("root2").innerHTML += "date: " + currentDateTime ;    
+                  } 
      
                  
     
