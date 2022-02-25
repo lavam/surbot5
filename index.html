@@ -175,7 +175,7 @@ div
        
 
                 
-                  var date, time, ampm=true, ampmsec=false;
+                  var date, time, ampm=true, sec=true;
        function getCurrentDateTime() { 
                      
                      var  today = new Date();
@@ -185,19 +185,20 @@ div
                      var hours   = today.getHours() < 10 ? "0" + today.getHours() : today.getHours() ;
                      var minutes   = today.getMinutes() < 10 ? "0" + today.getMinutes() : today.getMinutes() ;     
                      var seconds   = today.getSeconds() < 10 ? "0" + today.getSeconds() : today.getSeconds() ;  
-                      if(ampmsec) {
+                     if(ampm) {
                      var format = hours < 12 ? 'AM' : 'PM';
                      hours = hours % 12; 
                      hours = hours ? hours : 12;
                       date = day +"."+ month +"."+ year ;
-                      time = hours +":"+ minutes +":"+ seconds + format ;
-                       } else if(ampm) {   
-                            date = day +"."+ month +"."+ year ;
-                            time = hours +":"+ minutes +" "+ format ;
-                             } else {
+                      time = hours +":"+ minutes +" "+ format ;
+                            if(sec) {   
                                 date = day +"."+ month +"."+ year ;
-                                time = hours +":"+ minutes +" "+ format ;
-                                 }
+                                time = hours +":"+ minutes +":"+ seconds +" "+ format ;
+                                } 
+                        else {
+                              date = day +"."+ month +"."+ year ;
+                              time = hours +":"+ minutes +":"+ seconds ;
+                               }
                      dateTime = date +" "+ time ;
                      document.getElementById("root2").innerHTML = "";    
                      document.getElementById("root2").innerHTML += "Date: " + date +" "+ time ;    
