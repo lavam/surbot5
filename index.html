@@ -172,36 +172,38 @@ div
               document.getElementById("root2").innerHTML = "";
               document.getElementById("root2").innerHTML += "Date: " + dateTime ;
               }  */
-    
+        var hours = (date.getHours() < 10 ? '0' : '') +  
+
+                date.getHours();
             
        function getCurrentDateTime() { 
                     var  today = new Date();
-                     var day   = today.getDate() < 10 
-                                 ? "0" + today.getDate() 
-                                 : today.getDate(); 
-                     var month = today.getMonth() < 9 
-                                 ? "0" + (today.getMonth() + 1) 
-                                 : (today.getMonth() + 1);
-                    var year   = today.getFullYear() < 10 
-                                 ? "0" + today.geFullYear() 
-                                 : today.getFyllYear();
-                   var hours   = today.getHours() < 10 
-                                 ? "0" + today.getHours() 
-                                 : today.getHours();
-                  var minutes   = today.getMinutes() < 10 
-                                 ? "0" + today.getMinutes() 
-                                 : today.getMinutes();
-                    var seconds = today.getSeconds() < 10 
-                                 ? "0" + today.getSeconds() 
-                                 : today.getSeconds();
-                  currentDateTime =       day
-                                    +"."+ month
-                                    +"."+ year
-                                    +" "+ hours
-                                    +":"+ minutes
-                                    +":"+ seconds ;
+                     var day   = today.getDate() < 10 ? "0" + today.getDate() : today.getDate() ; 
+                                  
+                                 
+                     var month = today.getMonth() < 9 ? "0" + (today.getMonth() + 1) : (today.getMonth() + 1) ;
+                                 
+                                 
+                    var year   = today.getFullYear() < 10 ? "0" + today.getFullYear() : today.getFyllYear() ;
+                                  
+                                 
+                   var hours   = today.getHours() < 10 ? "0" + today.getHours() : today.getHours() ;
+                                  
+                                 
+                  var minutes   = today.getMinutes() < 10 ? "0" + today.getMinutes() : today.getMinutes() ;
+                                  
+                                 
+                  var seconds   = today.getSeconds() < 10 ? "0" + today.getSeconds() : today.getSeconds() ;
+                                  
+                                 
+                 var currentDate = day +"."+ month +"."+ year ;
+                                    
+                 var currentTime = hours +":"+ minutes +":"+ seconds ;
+                                    
+                                    
+                                    
                   document.getElementById("root2").innerHTML = "";    
-                  document.getElementById("root2").innerHTML += "Date: " + currentDateTime ;    
+                  document.getElementById("root2").innerHTML += "Date: " + currentDate +" "+ currentTime ;    
                   } 
     
     
