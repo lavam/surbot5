@@ -174,25 +174,25 @@ div
     
             
        function getCurrentDateTime() { 
-              var currentDate = new Date();
-              var currentDay   = currentDate.getDate() < 10 
-                                 ? "0" + currentDate.getDate() 
-                                 : currentDate.getDate();
-              var currentMonth = currentDate.getMonth() < 9 
-                                 ? "0" + (currentDate.getMonth() + 1) 
-                                 : (currentDate.getMonth() + 1);
-              var currentFullYear   = currentDate.getFullYear() < 10 
-                                 ? "0" + currentDate.geFullYear() 
-                                 : currentDate.getFyllYear();
-              var currentHours   = currentDate.getHours() < 10 
-                                 ? "0" + currentDate.getHours() 
-                                 : currentDate.getHours();
-              var currentMinuts   = currentDate.getMinuts() < 10 
-                                 ? "0" + currentDate.getMinuts() 
-                                 : currentDate.getMinuts();
-              var currentSeconds = currentDate.getSeconds() < 10 
-                                 ? "0" + currentDate.getSeconds() 
-                                 : currentDate.getSeconds();
+              var        today = new Date();
+              var currentDay   = today.getDate() < 10 
+                                 ? "0" + today.getDate() 
+                                 : today.getDate();
+              var currentMonth = today.getMonth() < 9 
+                                 ? "0" + (today.getMonth() + 1) 
+                                 : (today.getMonth() + 1);
+              var currentFullYear   = today.getFullYear() < 10 
+                                 ? "0" + today.geFullYear() 
+                                 : today.getFyllYear();
+              var currentHours   = today.getHours() < 10 
+                                 ? "0" + today.getHours() 
+                                 : today.getHours();
+              var currentMinuts   = today.getMinuts() < 10 
+                                 ? "0" + today.getMinuts() 
+                                 : today.getMinuts();
+              var currentSeconds = today.getSeconds() < 10 
+                                 ? "0" + today.getSeconds() 
+                                 : today.getSeconds();
                  currentDateTime = currentDay
                                     +"."+ currentMonth
                                     +"."+ currentFullYear
@@ -200,7 +200,7 @@ div
                                     +":"+ currentMinuts
                                     +":"+ currentSeconds ;
                   document.getElementById("root2").innerHTML = "";    
-                  document.getElementById("root2").innerHTML += "date: " + currentDateTime ;    
+                  document.getElementById("root2").innerHTML += "Date: " + currentDateTime ;    
                   } 
      
                  
