@@ -116,7 +116,8 @@ div
 
     firebase.initializeApp(firebaseConfig);
     
-       var dateTime, currentDateTime;
+       var dateTime;
+       var currentDateTime;
 
 
        function ledOn(){  getDateTime();
@@ -175,25 +176,25 @@ div
             
        function getCurrentDateTime() { 
                     var  today = new Date();
-                     var day   = today.getDate() < 10 
+                     var day   = today.getDate(); /* < 10 
                                  ? "0" + today.getDate() 
-                                 : today.getDate();
-                     var month = today.getMonth() < 9 
+                                 : today.getDate(); */
+                     var month = today.getMonth(); /* < 9 
                                  ? "0" + (today.getMonth() + 1) 
-                                 : (today.getMonth() + 1);
-                    var year   = today.getFullYear() < 10 
+                                 : (today.getMonth() + 1); */
+                    var year   = today.getFullYear(); /* < 10 
                                  ? "0" + today.geFullYear() 
-                                 : today.getFyllYear();
-                   var hours   = today.getHours() < 10 
+                                 : today.getFyllYear(); */
+                   var hours   = today.getHours(); /* < 10 
                                  ? "0" + today.getHours() 
-                                 : today.getHours();
-                  var minuts   = today.getMinuts() < 10 
+                                 : today.getHours(); */
+                  var minuts   = today.getMinuts(); /* < 10 
                                  ? "0" + today.getMinuts() 
-                                 : today.getMinuts();
-                    var seonds = today.getSeconds() < 10 
+                                 : today.getMinuts(); */
+                    var seonds = today.getSeconds(); /* < 10 
                                  ? "0" + today.getSeconds() 
-                                 : today.getSeconds();
-                  currentDateTime = day
+                                 : today.getSeconds(); */ 
+                  currentDateTime =       day
                                     +"."+ month
                                     +"."+ year
                                     +" "+ hours
