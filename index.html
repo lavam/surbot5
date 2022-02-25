@@ -186,6 +186,7 @@ div
                      var seconds   = today.getSeconds() < 10 ? "0" + today.getSeconds() : today.getSeconds() ;    
                      var currentDate = day +"."+ month +"."+ year ;
                      var currentTime = hours +":"+ minutes +":"+ seconds ;
+                     currentDateTime = currentDate +" "+ currentTime ;
                      document.getElementById("root2").innerHTML = "";    
                      document.getElementById("root2").innerHTML += "Date: " + currentDate +" "+ currentTime ;    
                      }         
