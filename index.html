@@ -249,7 +249,8 @@ div
         thisRef.getDownloadURL().then(function(url) {
         var test = url;
         document.getElementById("root3").innerHTML += "<br>"+ test ;
-        
+        window.open(test) ;
+       // window.location.href = test ;
           });
         
        });
