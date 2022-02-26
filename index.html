@@ -6,9 +6,9 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Document</title>
   
-  
 
-<style type=text/css> 
+
+
 
   
 p{ 
@@ -59,6 +59,8 @@ div
 </head>
   
 <body>
+  
+  <input type="file" onchange="uploadFile()" id="files" name="files[]" multiple />
   
 <div>
   
@@ -216,17 +218,27 @@ div
                   alert('2');
                                   
                                  
-                 import { getStorage, ref, uploadBytes } from "firebase/storage";
-
-const storage = getStorage();
-const storageRef = ref(storage, 'some-child');
-
-const bytes = new Uint8Array([0x48, 0x65, 0x6c, 0x6c, 0x6f, 0x2c, 0x20, 0x77, 0x6f, 0x72, 0x6c, 0x64, 0x21]);
-uploadBytes(storageRef, bytes).then((snapshot) => {
-  console.log('Uploaded an array!');
-});
                  
-                                 
+
+                 
+                    //function to save file
+    function uploadFile(){
+      
+      // Created a Storage Reference with root dir
+      var storageRef = firebase.storage().ref();
+      // Get the file from DOM
+      var file = document.getElementById("files").files[0];
+      console.log(file);
+      
+      //dynamically set reference to the file name
+      var thisRef = storageRef.child(file.name);
+
+      //put request upload file to firebase storage
+      thisRef.put(file).then(function(snapshot) {
+         alert("File Uploaded")
+         console.log('Uploaded a blob or file!');
+      });
+    }             
                  
                                     
                  
