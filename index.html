@@ -110,7 +110,8 @@ div
        <p id="root"> </p>
   </div>
             
-  <div style="text-align: center;"> <p id="root2"> </p> </div>
+  <div> <p id="root2"> </p> </div>
+  <div> <p id="root3"> </p> </div>
 
   <script>
   // Import the functions you need from the SDKs you need
@@ -229,6 +230,7 @@ div
                     //function to save file
     function uploadFile(){
       
+      document.getElementById("root3").innerHTML += "<br>"+ "Uploading..." ;
       // Created a Storage Reference with root dir
       var storageRef = firebase.storage().ref();
       // Get the file from DOM
@@ -248,6 +250,8 @@ div
       }
     
       function downloadFile(){
+        
+      document.getElementById("root3").innerHTML += "<br>"+ "Downloading..." ;
       var storageRef = firebase.storage().ref();
       var thisRef = storageRef.child(file.name);
       thisRef.getDownloadURL().then(function(url) {
@@ -255,6 +259,7 @@ div
        // document.getElementById("root2").innerHTML += "<br>"+test ;
         window.open(test) ;
        // location.href = test ;
+        
       });
       
     }             
