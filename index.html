@@ -260,7 +260,7 @@ div
     
       function downloadFile(){
     
-      var file fileUploaded;
+      var file = fileUploaded;
       document.getElementById("root3").innerHTML += "<br>"+ "Downloading..." ;
       var storageRef = firebase.storage().ref();
       var thisRef = storageRef.child(file.name);
