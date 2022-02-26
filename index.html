@@ -126,7 +126,7 @@ div
     
        var dateTime;
       
-       var date, time, ampm=false, sec=true;
+       var date, time, ampm=true, sec=true;
 
        function ledOn(){  getCurrentDateTime();
           firebase.database().ref("LED").set({
