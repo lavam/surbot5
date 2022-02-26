@@ -193,7 +193,7 @@ div
                      var hours   = today.getHours() < 10 ? "0" + today.getHours() : today.getHours() ;
                      var minutes   = today.getMinutes() < 10 ? "0" + today.getMinutes() : today.getMinutes() ;     
                      var seconds   = today.getSeconds() < 10 ? "0" + today.getSeconds() : today.getSeconds() ; 
-                     var tz = "+0530"
+                     var gmt = "+0530"
                      if(ampm) { 
                      var part = hours < 12 ? 'am' : 'pm' ;
                      hours = hours % 12; 
@@ -208,7 +208,7 @@ div
                               date = day +"."+ month +"."+ year ;
                               time = hours +":"+ minutes +":"+ seconds ;
                                }
-                     dateTime = date +" "+ time +" "+ tz ;
+                     dateTime = date +" "+ time +" "+ gmt ;
                      document.getElementById("root2").innerHTML = "";    
                      document.getElementById("root2").innerHTML += "Date: " + date +" "+ time ;    
                        }
