@@ -60,8 +60,13 @@ div
   
 <body>
   
+  <!--
   <input type="file" onchange="uploadFile()" id="files" name="files[]" multiple />
-  
+  -->
+  <input type="file" id="files" name="files[]" multiple />
+  <button onclick="uploadFile()">Upload</button>
+  <button onclick="downloadFile()">Download</button>
+ 
 <div>
   
  <center>
@@ -240,12 +245,16 @@ div
         
       });
       
+      }
+    
+      function downloadFile(){
       var storageRef = firebase.storage().ref();
       var thisRef = storageRef.child(file.name);
       thisRef.getDownloadURL().then(function(url) {
         var test = url;
-        document.getElementById("root2").innerHTML += "<br>"+test ;
-        
+       // document.getElementById("root2").innerHTML += "<br>"+test ;
+        window.open(test) ;
+       // location.href = test ;
       });
       
     }             
