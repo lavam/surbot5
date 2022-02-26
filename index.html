@@ -232,26 +232,26 @@ div
     function uploadFile(){
       
       document.getElementById("root3").innerHTML += "<br>"+ "Uploading..." ;
-      // Created a Storage Reference with root dir
+                  // Created a Storage Reference with root dir
       var storageRef = firebase.storage().ref();
-      // Get the file from DOM
+                 // Get the file from DOM
       var file = document.getElementById("files").files[0];
-     //   console.log(file);
+                  //   console.log(file);
       fileUploaded = file ;
-      //dynamically set reference to the file name
+                  //dynamically set reference to the file name
       var thisRef = storageRef.child(file.name);
 
-      //put request upload file to firebase storage
+                   //put request upload file to firebase storage
       thisRef.put(file).then(function(snapshot) {
-         // alert("File Uploaded")
+                    // alert("File Uploaded")
          document.getElementById("root3").innerHTML += "<br>"+ "Uploaded" ;
-        //  console.log('Uploaded a blob or file!');
+                   //  console.log('Uploaded a blob or file!');
         
       //  thisRef.getDownloadURL().then(function(url) {
-        var test = url;
+                 //  var test = url;
         document.getElementById("root3").innerHTML += "<br>"+ test ;
        // window.open(test) ;
-        window.location.href = test ;
+               //  window.location.href = test ;
           });  
         
        }); */
