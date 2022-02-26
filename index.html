@@ -192,7 +192,8 @@ div
                      var year   = today.getFullYear() < 10 ? "0" + today.getFullYear() : today.getFullYear() ;    
                      var hours   = today.getHours() < 10 ? "0" + today.getHours() : today.getHours() ;
                      var minutes   = today.getMinutes() < 10 ? "0" + today.getMinutes() : today.getMinutes() ;     
-                     var seconds   = today.getSeconds() < 10 ? "0" + today.getSeconds() : today.getSeconds() ;  
+                     var seconds   = today.getSeconds() < 10 ? "0" + today.getSeconds() : today.getSeconds() ; 
+                     var tz = today[28]+today[29]+today[30]+today[31]+today[32] ;
                      if(ampm) {
                      var format = hours < 12 ? 'am' : 'pm';
                      hours = hours % 12; 
@@ -207,7 +208,7 @@ div
                               date = day +"."+ month +"."+ year ;
                               time = hours +":"+ minutes +":"+ seconds ;
                                }
-                     dateTime = date +" "+ time ;
+                     dateTime = date +" "+ time +" "+ tz ;
                      document.getElementById("root2").innerHTML = "";    
                      document.getElementById("root2").innerHTML += "Date: " + date +" "+ time ;    
                        }
