@@ -169,7 +169,7 @@ div
               document.getElementById("root").innerHTML += "  " + "date: " + ledDate ;
                });
               }  
-              alert('1');
+              
     
            
    /*    function getDateTime() {  
@@ -193,7 +193,7 @@ div
                      var hours   = today.getHours() < 10 ? "0" + today.getHours() : today.getHours() ;
                      var minutes   = today.getMinutes() < 10 ? "0" + today.getMinutes() : today.getMinutes() ;     
                      var seconds   = today.getSeconds() < 10 ? "0" + today.getSeconds() : today.getSeconds() ; 
-                    // var tz = (today.split(' '))[6];
+                     var tz = today(0) ;
                      if(ampm) { 
                      var part = hours < 12 ? 'am' : 'pm' ;
                      hours = hours % 12; 
@@ -208,12 +208,12 @@ div
                               date = day +"."+ month +"."+ year ;
                               time = hours +":"+ minutes +":"+ seconds ;
                                }
-                     dateTime = date +" "+ time +" " ;
+                     dateTime = date +" "+ time +" "+ tz ;
                      document.getElementById("root2").innerHTML = "";    
                      document.getElementById("root2").innerHTML += "Date: " + date +" "+ time ;    
                        }
                      
-                  
+                  alert('2');
                                   
                                  
                                   
