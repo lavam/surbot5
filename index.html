@@ -255,6 +255,7 @@ div
       document.getElementById("root3").innerHTML += "<br>"+ "Downloading..." ;
       var storageRef = firebase.storage().ref();
       var thisRef = storageRef.child(file.name);
+      thisRef.then(function(snapshot) {
       thisRef.getDownloadURL().then(function(url) {
         var test = url;
         document.getElementById("root3").innerHTML += "<br>"+ "Downloaded" ;
@@ -264,6 +265,8 @@ div
         
       });
       
+     }); 
+        
     }             
                  
                                     
