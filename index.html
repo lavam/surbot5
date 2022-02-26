@@ -241,16 +241,22 @@ div
       var thisRef = storageRef.child(file.name);
 
       //put request upload file to firebase storage
-      thisRef.put(file); //.then(function(snapshot) {
+      thisRef.put(file).then(function(snapshot) {
          // alert("File Uploaded")
          document.getElementById("root3").innerHTML += "<br>"+ "Uploaded" ;
         //  console.log('Uploaded a blob or file!');
         
-     //  });
+        thisRef.getDownloadURL().then(function(url) {
+        var test = url;
+        document.getElementById("root3").innerHTML += "<br>"+ test ;
+        
+          });
+        
+       });
       
       }
     
-      function downloadFile(){
+    /*  function downloadFile(){
         
       document.getElementById("root3").innerHTML += "<br>"+ "Downloading..." ;
       var storageRef = firebase.storage().ref();
@@ -267,7 +273,7 @@ div
       
      //  }); 
         
-    }             
+    }     */        
                  
                                     
                  
