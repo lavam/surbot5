@@ -126,7 +126,7 @@ div
     
        var dateTime;
       
-       var date, time, ampm=false, sec=false;
+       var date, time, ampm=false, sec=true;
 
        function ledOn(){  getCurrentDateTime();
           firebase.database().ref("LED").set({
@@ -202,11 +202,11 @@ div
                       time = hours +":"+ minutes +" "+ part ;
                             if(sec) {   
                                 date = day +"."+ month +"."+ year ;
-                                time = hours +":"+ minutes +":"+ seconds +" "+ part ;
+                                time = hours +":"+ minutes +":"+ seconds +" "+ part  +" "+ gmt ;
                                 } 
                        } else {
                               date = day +"."+ month +"."+ year ;
-                              time = hours +":"+ minutes +":"+ seconds ;
+                              time = hours +":"+ minutes +":"+ seconds +" "+ gmt ;
                                }
                      dateTime = date +" "+ time +" "+ gmt ;
                      document.getElementById("root2").innerHTML = "";    
