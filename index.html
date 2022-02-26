@@ -56,7 +56,7 @@ div
   
 <div>
   
- <!-- <center> -->
+ <center>
 <h3> Realtime status monitoring </h3>
 <button onclick="ledOn()">ON</button>
 <button onclick="ledOff()">OFF</button>
@@ -71,7 +71,7 @@ div
 <input type="submit" name="Upload" value="Upload" /> 
 <br>
  -->
-<!-- </center> -->
+</center>
   
 </div>
 
@@ -120,7 +120,7 @@ div
     
        var dateTime;
       
-       var date, time, ampm=true, sec=true;
+       var date, time, ampm=true, sec=false;
 
        function ledOn(){  getCurrentDateTime();
           firebase.database().ref("LED").set({
@@ -163,7 +163,7 @@ div
               document.getElementById("root").innerHTML += "  " + "date: " + ledDate ;
                });
               }  
-              alert('5');
+              alert('6');
     
            
    /*    function getDateTime() {  
