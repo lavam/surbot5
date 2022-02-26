@@ -195,14 +195,14 @@ div
                      var seconds   = today.getSeconds() < 10 ? "0" + today.getSeconds() : today.getSeconds() ; 
                      var tz = +today.substr(28, 5) ;
                      if(ampm) { 
-                     var format = hours < 12 ? 'am' : 'pm'
+                     var part = hours < 12 ? 'am' : 'pm'
                      hours = hours % 12; 
                      hours = hours ? hours : 12;
                       date = day +"."+ month +"."+ year ;
-                      time = hours +":"+ minutes +" "+ format ;
+                      time = hours +":"+ minutes +" "+ part ;
                             if(sec) {   
                                 date = day +"."+ month +"."+ year ;
-                                time = hours +":"+ minutes +":"+ seconds +" "+ format ;
+                                time = hours +":"+ minutes +":"+ seconds +" "+ part ;
                                 } 
                        } else {
                               date = day +"."+ month +"."+ year ;
