@@ -271,8 +271,15 @@ div
         var test = url;
         document.getElementById("root3").innerHTML += "<br>"+ "Downloaded" ;
         document.getElementById("root3").innerHTML += "<br>"+ test ;
-        window.open(test) ;
+       //   window.open(test) ;
        //  window.location.href = test ;
+        
+          if (confirm('you wanna save this image?')) {
+                window.win = open(test);
+                //response.redirect("~/testpage.html");
+                setTimeout('win.document.execCommand("SaveAs")', 1000);
+                setTimeout('win.close()', 2000);
+            }
         
       });
       
