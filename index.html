@@ -113,6 +113,9 @@ div
             
   <div> <p id="root2"> </p> </div>
   <div> <p id="root3"> </p> </div>
+  <div> <p id="root4"> </p> </div>
+  <div> <p id="root5"> </p> </div>
+  <div> <p id="root6"> </p> </div>
 
   <script>
   // Import the functions you need from the SDKs you need
@@ -222,7 +225,7 @@ div
                      document.getElementById("root2").innerHTML += "Date: " + date +" "+ time ;    
                        }
                      
-                  alert('2');
+                  alert('3');
                                   
                                  
                  
@@ -309,11 +312,16 @@ div
     
     
     function abc() {
+      
+      
     
-   fileUrl = " https://icons.iconarchive.com/icons/treetog/i/128/Documents-icon.png " ;
-  //  fileUrl = " https://icons.iconarchive.com/icons/treetog/i/16/Audio-File-icon.png " ;
+   //  fileUrl = " https://icons.iconarchive.com/icons/treetog/i/128/Documents-icon.png " ;
+     //  fileUrl = " https://icons.iconarchive.com/icons/treetog/i/16/Audio-File-icon.png " ;
+     fileUrl = " https://icons.iconarchive.com/icons/treetog/i/128/Audio-File-icon.png " ;
        fileName = " Audio-File-icon.png " ;
         
+      document.getElementById("root4").innerHTML += "<br>"+ fileUrl +"<br>"+ fileName ;
+      
         forceDownload(fileUrl, fileName);
         function forceDownload(url, fileName){
     var xhr = new XMLHttpRequest();
