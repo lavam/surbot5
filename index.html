@@ -323,9 +323,9 @@ div
       document.getElementById("root4").innerHTML += "<br>"+ fileUrl +"<br>"+ fileName ;
       
         forceDownload(fileUrl, fileName);
-        function forceDownload(url, fileName){
+        function forceDownload(fileUrl, fileName){
     var xhr = new XMLHttpRequest();
-    xhr.open("GET", url, true);
+    xhr.open("GET", fileUrl, true);
     xhr.responseType = "blob";
     xhr.onload = function(){
         var urlCreator = window.URL || window.webkitURL;
