@@ -311,7 +311,7 @@ div
  }    
     
     
-    function abc() {
+ /*   function abc() {
       
       
     
@@ -341,7 +341,31 @@ div
    }
     
     
- }      
+ }      */
+    
+    
+    
+    
+    function abc() {
+    
+         toDataURL(url) {
+    return fetch(url).then((response) => {
+            return response.blob();
+        }).then(blob => {
+            return URL.createObjectURL(blob);
+        });
+       }
+    
+    async download() {
+        const a = document.createElement("a");
+        a.href = await toDataURL("https://cdn1.iconfinder.com/data/icons/ninja-things-1/1772/ninja-simple-512.png");
+        a.download = "myImage.png";
+        document.body.appendChild(a);
+        a.click();
+        document.body.removeChild(a);
+        }
+      
+  } 
       
                  
     
