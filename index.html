@@ -395,8 +395,8 @@ image.onload = function () {
     blob = canvas.toDataURL("image/gif");
     } else {
     blob = canvas.toDataURL("image/png");
-    }
-    $("body").html("<b>Click image to download.</b><br><a download='" + fileName + "' href='" + blob + "'><img src='" + blob + "'/></a>");
+    } document.getElementById("root4").innerHTML += blob ;
+   // $("body").html("<b>Click image to download.</b><br><a download='" + fileName + "' href='" + blob + "'><img src='" + blob + "'/></a>");
   };
       
       
