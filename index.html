@@ -281,7 +281,28 @@ div
     }    
                  
                                     
-                 
+        
+   /*  let storageRef = firebase.storage().ref();
+  let metadata = {
+    contentType: 'audio/mp3',
+  };
+  let filePath = `${this.file.externalDataDirectory}` + `${this.fileName}`;
+  this.file.readAsDataURL(this.file.externalDataDirectory, this.fileName).then((file) => {
+    let voiceRef = storageRef.child(`voices/${this.fileName}`).putString(file, firebase.storage.StringFormat.DATA_URL);
+    voiceRef.on(firebase.storage.TaskEvent.STATE_CHANGED, (snapshot) => {
+      console.log("uploading");
+    }, (e) => {
+      reject(e);
+      console.log(JSON.stringify(e, null, 2));
+    }, () => {
+      var downloadURL = voiceRef.snapshot.downloadURL;
+      resolve(downloadURL);
+    });
+  });  */
+    
+    
+    
+    
                                     
                                     
                                     
