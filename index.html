@@ -66,6 +66,7 @@ div
   <input type="file" id="files" name="files[]" multiple />
   <button onclick="uploadFile()">Upload</button>
   <button onclick="downloadFile()">Download</button>
+  <button onclick="abc()">Abc</button>
  
 <div>
   
@@ -295,20 +296,22 @@ div
         document.body.removeChild(tag);
     }
     xhr.send();
-}   */
+   }   */
         
           
         
       });
       
      //  }); 
+      
         
-    }    
+ }    
     
     
+    function abc() {
     
-   // https://icons.iconarchive.com/icons/treetog/i/128/Documents-icon.png
-    fileUrl = " https://icons.iconarchive.com/icons/treetog/i/16/Audio-File-icon.png " ;
+   fileUrl = " https://icons.iconarchive.com/icons/treetog/i/128/Documents-icon.png " ;
+  //  fileUrl = " https://icons.iconarchive.com/icons/treetog/i/16/Audio-File-icon.png " ;
        fileName = " Audio-File-icon.png " ;
         
         forceDownload(fileUrl, fileName);
@@ -325,11 +328,13 @@ div
         document.body.appendChild(tag);
         tag.click();
         document.body.removeChild(tag);
-    }
+     }
     xhr.send();
-}
+   }
     
     
+ }      
+      
                  
     
    /* if (confirm('you wanna save this image?')) {
